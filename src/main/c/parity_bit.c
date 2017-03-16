@@ -1,8 +1,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
-#define K_VAL 15             // number of characters per row
+#define K_VAL 100             // number of characters per row
 #define FILE_IN "input.txt"   // input file name
 #define FILE_OUT "output.txt"  // output file name
 
@@ -150,6 +151,7 @@ void charCorrection() {
         max = 0;
 
         do {           // scan one row
+            assert(max < K_VAL+1);
             ch = fgetc(filePtr);
             buff[max] = ch;
 
